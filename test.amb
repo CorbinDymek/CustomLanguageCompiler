@@ -1,0 +1,51 @@
+START_PROGRAM
+INT x ;
+STRING str ;
+[ INT ] ar [ 4 ] ;
+[ STRING ] list [ 3 ] ;
+INT res ;
+INT total ;
+INT count ;
+
+CODE
+
+START_SUB add : 
+PRINT ( "Enter a number" ) ;
+x := INPUT_INT ;
+res := ( 20 + 3 ) * x + 10 ;
+PRINT ( res ) ;
+END_SUB
+
+START_SUB main :
+GOSUB add ;
+ar [ 0 ] := 55 ;
+ar [ 1 ] := 100 ;
+ar [ 2 ] := -200 ;
+ar [ 3 ] := 300 ;
+list [ 0 ] := "hi" ;
+list [ 1 ] := "BYTE" ;
+list [ 2 ] := "cheese wizz" ;
+count := 0 ;
+total := 0 ;
+WHILE count < 4 DO
+	total := total + ar [ count ] ;
+	count := count + 1 ;
+END_WHILE
+PRINT ( total ) ;
+
+PRINT ( "Enter a number" ) ;
+x := INPUT_INT ;
+
+IF x > 0 THEN 
+	PRINT ( "x is positive" ) ;
+ELSE 
+	PRINT ( "x is non-positive" ) ;
+END_IF
+
+count := 0 ; 
+WHILE count < 3 DO
+	PRINT ( list [ count ] ) ;
+	count := count + 1 ;
+END_WHILE
+END_SUB
+END_PROGRAM
